@@ -1,0 +1,24 @@
+for i in range(0,2):
+       for j in range(0,3):
+	       print(i,j,"migen")
+
+	       
+0 0 migen
+0 1 migen
+0 2 migen
+1 0 migen
+1 1 migen
+1 2 migen
+>>> for i in range(0,2):
+       for i in range(0,3):
+	       print("migen")
+       print("")
+
+       
+migen
+migen
+migen
+
+migen
+migen
+migen
