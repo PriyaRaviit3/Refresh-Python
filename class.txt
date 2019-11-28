@@ -1,0 +1,36 @@
+ 
+#class
+
+
+
+
+
+class data():
+	def getdata(self):
+		name=input("enter name = ")
+		self.name=name
+		age=int(input("age = "))
+		self.age=age
+
+		
+>>> s=data()
+>>> s1=data()
+>>> s2=data()
+>>> s.getdata()
+enter name = migen
+age = 3
+>>> s.getdata()
+enter name = santhosh
+age = 36
+>>> s.name
+'santhosh'
+>>> s1.getdata()
+enter name = migen
+age = 3
+>>> s2.getdata()
+enter name = priya
+age = 28
+>>> s2.name="bavyaa"
+>>> s2.name
+'bavyaa'
+>>> 
