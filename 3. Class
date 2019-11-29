@@ -10,3 +10,4 @@ class data():
 >>> s.getdata()
  enter the name = migen
 age = 3
+
