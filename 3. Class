@@ -1,0 +1,12 @@
+class data():
+	def getdata(self):
+		name=input(" enter the name = ")
+		self.name=name
+		age=int(input("age = "))
+		self.age=age
+
+		
+>>> s=data()
+>>> s.getdata()
+ enter the name = migen
+age = 3
