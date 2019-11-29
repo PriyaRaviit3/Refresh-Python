@@ -1,0 +1,43 @@
+def display(x):
+	for i in range(x):
+		print(i)
+    
+    
+    
+    
+    
+
+		
+>>> s=display(15)
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+
+
+
+
+
+
+>>> def display(x):
+	for i in range(x):
+		print(i,end="")
+    
+    
+    
+    
+
+		
+>>> s=display(15)
+01234567891011121314
