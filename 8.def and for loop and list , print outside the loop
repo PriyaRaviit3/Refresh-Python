@@ -1,0 +1,12 @@
+l=[]
+>>> def display(x):
+	for i in range(x):
+		l.append(i)
+	print(l)
+  
+  
+  
+
+	
+>>> display(5)
+[0, 1, 2, 3, 4]
