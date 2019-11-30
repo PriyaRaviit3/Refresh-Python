@@ -1,0 +1,4 @@
+date_time=now.strftime("%d/%m/%y "  " time = "   "  %H-%M-%S")
+>>> print("date= ", date_time)
+
+date=  30/11/19  time =   13-55-15
