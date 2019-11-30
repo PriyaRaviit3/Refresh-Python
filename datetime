@@ -1,0 +1,53 @@
+ from datetime import datetime
+>>> datetime.now()
+
+
+datetime.datetime(2019, 11, 30, 13, 8, 56, 615502)
+\
+
+
+
+>>> datetime.now().date()
+
+
+
+datetime.date(2019, 11, 30)
+
+
+>>> datetime.now().weekday()
+
+
+5
+
+
+>>> datetime.now().strftime("%d")
+
+
+'30'
+
+
+datetime.now().strftime("%a")
+'Sat'
+
+
+>>> datetime.now().strftime("%A")
+
+
+'Saturday'
+
+datetime.now().strftime("%f")
+
+
+'212813'
+
+
+>>> datetime.now()
+
+
+datetime.datetime(2019, 11, 30, 13, 18, 10, 6186)
+
+>>> datetime.now().strftime("%F")
+
+
+'2019-11-30'
+>>> 
