@@ -16,3 +16,10 @@ class sample():
 >>> s=sample()
 >>> s.getdate("Singapore")
 2019-12-02 18:50:19.529642+08:00
+
+
+
+
+
+
+
