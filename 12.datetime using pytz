@@ -1,0 +1,18 @@
+import pytz
+>>> from datetime import datetime
+>>> import time
+>>> time={}
+class sample():
+	for i in pytz.all_timezones:
+		time[i]=datetime.now().astimezone(tz=pytz.timezone(i))
+		def getdate(self,time):
+			self.time=time
+			if(time==time):
+				print(datetime.now().astimezone(tz=pytz.timezone(time)))
+        
+        
+
+				
+>>> s=sample()
+>>> s.getdate("Singapore")
+2019-12-02 18:50:19.529642+08:00
