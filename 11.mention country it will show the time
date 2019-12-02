@@ -1,0 +1,18 @@
+ import pytz
+>>> import datetime
+>>> from datetime import datetime
+    import time
+>>> class sample():
+	def getdata(self,x):
+		self.x=datetime.now().astimezone(tz=pytz.timezone("Singapore"))
+	def display(self):
+		print(self.x)
+
+		
+>>> s=sample()
+>>> s.getdata("Singapore")
+>>> s.display() 
+
+
+
+2019-12-02 17:21:55.540076+08:00
