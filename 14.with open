@@ -1,0 +1,19 @@
+with open("e:\python\sp.txt","r") as file:
+	file.read()
+
+	
+'I am learning pythonsecond time'
+
+
+
+
+class sample():
+	def __init__(self,x):
+		self.x=open(x,"r")
+	def display(self):
+		print(x.read())
+
+		
+>>> s=sample("e:\python\sp.txt")
+>>> s.display()
+I am learning pythonsecond time
