@@ -1,0 +1,40 @@
+ x=open("e:\python\sp.txt","w")
+>>> x
+<_io.TextIOWrapper name='e:\\python\\sp.txt' mode='w' encoding='cp1252'>
+>>> x.name
+'e:\\python\\sp.txt'
+>>> x.mode
+'w'
+
+
+>>> x.closed
+False
+>>> x.write("I am learning python")
+20
+>>> x.seek
+<built-in method seek of _io.TextIOWrapper object at 0x03240B30>
+>>> x.close()
+>>> x.closed
+True
+>>> x=open("e:\python\sp.txt","a")
+>>> x.write("second time")
+11
+>>> x.closed
+False
+>>> x.close()
+>>> x.closed
+True
+
+>>> x=open("e:\python\sp.txt","r")
+>>> x.read()
+'I am learning pythonsecond time'
+>>> x.read()
+''
+>>> x.seek(0)
+0
+>>> x.read()
+'I am learning pythonsecond time'
+>>> x.seek(0)
+0
+>>> x.tell()
+0
