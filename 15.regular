@@ -1,0 +1,32 @@
+ import re
+
+
+>>> mynum="91-965-579-1083"
+>>> if re.search(r"\w{2}-\w{3}-\w{3}-\w{4}", mynum):
+	    print("its my phone number")
+
+	    
+its my phone number
+>>> 
+>>> 
+>>> def getnum(str):
+	mynum=str
+	if re.search(r"\w{2}-\w{3}-\w{3}-\w{4}", mynum):
+		    print("its my phone number")
+
+		    
+>>> getnum("9655791083")
+>>> getnum("91-965-579-1083")
+its my phone number
+>>> def getnum(str):
+	mynum=str
+	if re.search(r"\w{2}-\w{3}-\w{3}-\w{4}", mynum):
+		    print("its my phone number")
+	else:
+		print("Enter the number properly")
+
+		
+>>> getnum("91-965-579-1083")
+its my phone number
+>>> getnum("9655791083")
+Enter the number properly
