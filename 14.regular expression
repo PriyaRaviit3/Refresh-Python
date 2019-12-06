@@ -1,0 +1,52 @@
+# install python in cmd
+
+
+ipython
+
+
+#pip installed
+
+
+ pip install docx2txt
+ 
+ 
+ # import docx2txt
+ 
+ 
+ import docx2txt
+
+In [3]: text=docx2txt.process("C:/Users/I18N/Downloads/lalitha priya resume.docx")
+
+In [4]: print(text)
+
+
+
+# mail filtering
+
+
+
+
+
+ re.findall("/w*@",text)
+Out[36]: []
+
+In [37]: re.findall("@",text)
+Out[37]: ['@']
+
+In [38]: re.findall("@\w",text)
+Out[38]: ['@g']
+
+In [39]: re.findall("@\w*",text)
+Out[39]: ['@gmail']
+
+In [40]: re.findall("\w*@\w*",text)
+Out[40]: ['priyalalith1996@gmail']
+
+In [41]: re.findall("\w*@\w*.\w+",text)
+Out[41]: ['priyalalith1996@gmail.com']
+
+
+
+
+
+
