@@ -1,0 +1,15 @@
+x=pd.DataFrame([["priya",29],["migen",3]],columns=["name","age"])
+
+In [63]: x
+Out[63]:
+    name  age
+0  priya   29
+1  migen    3
+
+In [64]: x["mail_id"]=x["name"]+"@"+["gmail.com"]
+
+In [65]: x
+Out[65]:
+    name  age          mail_id
+0  priya   29  priya@gmail.com
+1  migen    3  migen@gmail.com
