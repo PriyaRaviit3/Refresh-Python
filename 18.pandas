@@ -1,0 +1,28 @@
+
+In [39]: import pandas as pd
+
+In [40]: data=pd.Series(i for i in range(10,10))
+
+In [41]: data
+Out[41]: Series([], dtype: float64)
+
+In [42]: data=pd.Series(i for i in range(1,10))
+
+In [43]: data
+Out[43]:
+0    1
+1    2
+2    3
+3    4
+4    5
+5    6
+6    7
+7    8
+8    9
+dtype: int64
+
+In [44]: data[0]
+Out[44]: 1
+
+In [45]: data[1]
+Out[45]: 2
