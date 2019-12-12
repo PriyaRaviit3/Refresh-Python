@@ -1,0 +1,12 @@
+ data=pd.DataFrame([{""},{""},{""}])
+ 
+ 
+ data=pd.DataFrame([{"name":"priya","age":28,"city":"salem"},{"name":"migen","age":3,"city":"dharmapuri"},{"nam
+    ...: e":"santhosh","age":39,"city":"erode"}])
+
+In [57]: data
+Out[57]:
+       name  age        city
+0     priya   28       salem
+1     migen    3  dharmapuri
+2  santhosh   39       erode
