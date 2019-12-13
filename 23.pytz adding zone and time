@@ -1,0 +1,10 @@
+import pytz
+>>> from datetime import datetime
+>>> t=[]
+>>> for i in pytz.all_timezones:
+	t.append(datetime.now().astimezone(tz=pytz.timezone(i)))
+  
+ >>>t
+ 
+ [datetime.datetime(2019, 12, 13, 5, 53, 17, 743827, tzinfo=<DstTzInfo 'Africa/Abidjan' GMT0:00:00 STD>), datetime.datetime(2019, 12, 13, 5, 53, 17, 773658, tzinfo=<DstTzInfo 'Africa/Accra' GMT0:00:00 STD>), datetime.datetime(2019, 12, 13, 8, 53, 17, 783428, tzinfo=<DstTzInfo 'Africa/Addis_Ababa' EAT+3:00:00 STD>), datetime.datetime(2019, 12, 13, 6, 53, 17, 792945, tzinfo=<DstTzInfo 'Africa/Algiers' CET+1:00:00 STD>), datetime.datetime(2019, 12, 13, 8, 53, 17, 802437, tzinfo=<DstTzInfo 'Africa/Asmara' EAT+3:00:00 STD>), datetime.datetime(2019, 12, 13, 8, 53, 17, 803140, tzinfo=<DstTzInfo 'Africa/Asmera' EAT+3:00:00 STD>), datetime.datetime(2019, 12, 13, 5, 53, 17, 803830, tzinfo=<DstTzInfo 'Africa/Bamako' GMT0:00:00 STD>), datetime.datetime(2019, 12, 13, 6, 53, 17, 808108, tzinfo=<DstTzInfo 'Africa/Bangui' WAT+1:00:00 STD>), datetime.datetime(2019, 12, 13, 5, 53, 17, 816642, tzinfo=<DstTzInfo 'Africa/Banjul' GMT0:00:00 STD>),
+  
