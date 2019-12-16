@@ -1,0 +1,214 @@
+import pandas as pd
+data=pd.DataFrame(/home/kavuchi/Desktop/countries of the world.csv)
+data
+             Country                               Region  Population  Area (sq. mi.)  ... Deathrate Agriculture Industry Service
+0       Afghanistan         ASIA (EX. NEAR EAST)             31056997          647500  ...     20,34        0,38     0,24    0,38
+1           Albania   EASTERN EUROPE                          3581655           28748  ...      5,22       0,232    0,188   0,579
+2           Algeria   NORTHERN AFRICA                        32930091         2381740  ...      4,61       0,101      0,6   0,298
+
+
+
+for i,j in data.iteritems(): 
+    ...:     print(i,j) 
+
+
+for i,j in data.itertuples(): 
+    ...:     print(i,j) 
+    
+ data.index                                                                                                                   
+Out[24]: RangeIndex(start=0, stop=227, step=1)
+
+ data.columns                                                                                                                 
+Out[25]: 
+Index(['Country', 'Region', 'Population', 'Area (sq. mi.)',
+       'Pop. Density (per sq. mi.)', 'Coastline (coast/area ratio)',
+       'Net migration', 'Infant mortality (per 1000 births)',
+       'GDP ($ per capita)', 'Literacy (%)', 'Phones (per 1000)', 'Arable (%)',
+       'Crops (%)', 'Other (%)', 'Climate', 'Birthrate', 'Deathrate',
+       'Agriculture', 'Industry', 'Service'],
+      dtype='object')
+
+
+
+ data.shape                                                                                                                   
+Out[26]: (227, 20)
+
+
+
+data.ndim                                                                                                                    
+Out[27]: 2
+
+
+data.axes                                                                                                                    
+Out[28]: 
+[RangeIndex(start=0, stop=227, step=1),
+ Index(['Country', 'Region', 'Population', 'Area (sq. mi.)',
+        'Pop. Density (per sq. mi.)', 'Coastline (coast/area ratio)',
+        'Net migration', 'Infant mortality (per 1000 births)',
+        'GDP ($ per capita)', 'Literacy (%)', 'Phones (per 1000)', 'Arable (%)',
+        'Crops (%)', 'Other (%)', 'Climate', 'Birthrate', 'Deathrate',
+        'Agriculture', 'Industry', 'Service'],
+       dtype='object')]
+
+
+data.values                                                                                                                  
+Out[29]: 
+array([['Afghanistan ', 'ASIA (EX. NEAR EAST)         ', 31056997, ...,
+        '0,38', '0,24', '0,38'],
+       ['Albania ', 'EASTERN EUROPE                     ', 3581655, ...,
+        '0,232', '0,188', '0,579'],
+       ['Algeria ', 'NORTHERN AFRICA                    ', 32930091, ...,
+        '0,101', '0,6', '0,298'],
+       ...,
+       ['Yemen ', 'NEAR EAST                          ', 21456188, ...,
+        '0,135', '0,472', '0,393'],
+       ['Zambia ', 'SUB-SAHARAN AFRICA                 ', 11502010, ...,
+        '0,22', '0,29', '0,489'],
+       ['Zimbabwe ', 'SUB-SAHARAN AFRICA                 ', 12236805,
+        ..., '0,179', '0,243', '0,579']], dtype=object)
+
+
+
+data.dtypes                                                                                                                  
+Out[30]: 
+Country                                object
+Region                                 object
+Population                              int64
+Area (sq. mi.)                          int64
+Pop. Density (per sq. mi.)             object
+Coastline (coast/area ratio)           object
+Net migration                          object
+Infant mortality (per 1000 births)     object
+GDP ($ per capita)                    float64
+Literacy (%)                           object
+Phones (per 1000)                      object
+Arable (%)                             object
+Crops (%)                              object
+Other (%)                              object
+Climate                                object
+Birthrate                              object
+Deathrate                              object
+Agriculture                            object
+Industry                               object
+Service                                object
+dtype: object
+
+
+data.ftypes                                                                                                                  
+/home/kavuchi/.local/bin/ipython:1: FutureWarning: DataFrame.ftypes is deprecated and will be removed in a future version. Use DataFrame.dtypes instead.
+  #!/usr/bin/python3
+Out[31]: 
+Country                                object:dense
+Region                                 object:dense
+Population                              int64:dense
+Area (sq. mi.)                          int64:dense
+Pop. Density (per sq. mi.)             object:dense
+Coastline (coast/area ratio)           object:dense
+Net migration                          object:dense
+Infant mortality (per 1000 births)     object:dense
+GDP ($ per capita)                    float64:dense
+Literacy (%)                           object:dense
+Phones (per 1000)                      object:dense
+Arable (%)                             object:dense
+Crops (%)                              object:dense
+Other (%)                              object:dense
+Climate                                object:dense
+Birthrate                              object:dense
+Deathrate                              object:dense
+Agriculture                            object:dense
+Industry                               object:dense
+Service                                object:dense
+dtype: object
+
+
+data.set_index("GDP ($ per capita)")                                                                                         
+Out[34]: 
+                            Country                               Region  Population  ...  Agriculture Industry Service
+GDP ($ per capita)                                                                    ...                              
+700.0                  Afghanistan         ASIA (EX. NEAR EAST)             31056997  ...         0,38     0,24    0,38
+4500.0                     Albania   EASTERN EUROPE                          3581655  ...        0,232    0,188   0,579
+6000.0                     Algeria   NORTHERN AFRICA                        32930091  ...        0,101      0,6   0,298
+8000.0              American Samoa   OCEANIA                                   57794  ...          NaN      NaN     NaN
+19000.0                    Andorra   WESTERN EUROPE                            71201  ...          NaN      NaN     NaN
+...                             ...                                  ...         ...  ...          ...      ...     ...
+800.0                    West Bank   NEAR EAST                               2460492  ...         0,09     0,28    0,63
+NaN                 Western Sahara   NORTHERN AFRICA                          273008  ...          NaN      NaN     0,4
+800.0                        Yemen   NEAR EAST                              21456188  ...        0,135    0,472   0,393
+800.0                       Zambia   SUB-SAHARAN AFRICA                     11502010  ...         0,22     0,29   0,489
+1900.0                    Zimbabwe   SUB-SAHARAN AFRICA                     12236805  ...        0,179    0,243   0,579
+
+[227 rows x 19 columns]
+
+
+
+
+s.xs(800.0 )                                                                                                                 
+Out[37]: 
+                           Country                               Region  Population  ...  Agriculture Industry Service
+GDP ($ per capita)                                                                   ...                              
+800.0               Guinea-Bissau   SUB-SAHARAN AFRICA                      1442029  ...         0,62     0,12    0,26
+800.0                    Kiribati   OCEANIA                                  105432  ...        0,089    0,242   0,668
+800.0                  Madagascar   SUB-SAHARAN AFRICA                     18595469  ...        0,276    0,165   0,559
+800.0                       Niger   SUB-SAHARAN AFRICA                     12525094  ...         0,39     0,17    0,44
+800.0                   West Bank   NEAR EAST                               2460492  ...         0,09     0,28    0,63
+800.0                       Yemen   NEAR EAST                              21456188  ...        0,135    0,472   0,393
+800.0                      Zambia   SUB-SAHARAN AFRICA                     11502010  ...         0,22     0,29   0,489
+
+[7 rows x 19 columns]
+
+
+
+
+data.get("Country")                                                                                                          
+Out[39]: 
+0         Afghanistan 
+1             Albania 
+2             Algeria 
+3      American Samoa 
+4             Andorra 
+            ...       
+222         West Bank 
+223    Western Sahara 
+224             Yemen 
+225            Zambia 
+226          Zimbabwe 
+Name: Country, Length: 227, dtype: object
+
+
+
+data.Country                                                                                                                 
+Out[40]: 
+0         Afghanistan 
+1             Albania 
+2             Algeria 
+3      American Samoa 
+4             Andorra 
+            ...       
+222         West Bank 
+223    Western Sahara 
+224             Yemen 
+225            Zambia 
+226          Zimbabwe 
+Name: Country, Length: 227, dtype: object
+
+
+
+
+data["Country"]                                                                                                              
+Out[41]: 
+0         Afghanistan 
+1             Albania 
+2             Algeria 
+3      American Samoa 
+4             Andorra 
+            ...       
+222         West Bank 
+223    Western Sahara 
+224             Yemen 
+225            Zambia 
+226          Zimbabwe 
+Name: Country, Length: 227, dtype: object
+
+
+
+
