@@ -1,0 +1,23 @@
+index=pd.date_range('18-12-2019','20-12-2019')                                                                               
+
+In [29]: index                                                                                                                        
+Out[29]: DatetimeIndex(['2019-12-18', '2019-12-19', '2019-12-20'], dtype='datetime64[ns]', freq='D')
+
+In [30]: df3=pd.DataFrame({"name":["priya","migen","santhosh"],"roll no":[22,45,67]})                                                 
+
+In [31]: df3                                                                                                                          
+Out[31]: 
+       name  roll no
+0     priya       22
+1     migen       45
+2  santhosh       67
+
+In [32]: df3=pd.DataFrame({"name":["priya","migen","santhosh"],"roll no":[22,45,67]},index=index)                                     
+
+In [33]: df3                                                                                                                          
+Out[33]: 
+                name  roll no
+2019-12-18     priya       22
+2019-12-19     migen       45
+2019-12-20  santhosh       67
+
