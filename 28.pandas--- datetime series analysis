@@ -1,0 +1,16 @@
+ import pandas as pd
+ 
+ df1=pd.to_datetime("18th Dec 2019")                                                                                           
+
+In [4]: df1                                                                                                                           
+Out[4]: Timestamp('2019-12-18 00:00:00')
+
+In [5]: df1=pd.to_datetime("Dec 18th 2019")                                                                                           
+
+In [6]: df1                                                                                                                           
+Out[6]: Timestamp('2019-12-18 00:00:00')
+
+In [7]: df1=pd.to_datetime("2019 Dec 18th")                                                                                           
+
+In [8]: df1                                                                                                                           
+Out[8]: Timestamp('2019-12-18 00:00:00')
