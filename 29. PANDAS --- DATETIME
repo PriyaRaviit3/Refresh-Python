@@ -1,0 +1,9 @@
+pd.to_datetime('date in string format)
+
+
+pd.to_timedelta(np.arange(#of days))
+
+
+pd.date_range('',periods=10)
+
+	         ('','',freq='D'|'h'|'b')
