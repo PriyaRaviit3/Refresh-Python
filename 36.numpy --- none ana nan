@@ -1,0 +1,38 @@
+data=pd.Series(["Santhosh","Priya","migen"])
+
+In [76]: data
+Out[76]:
+0    Santhosh
+1       Priya
+2       migen
+dtype: object
+
+In [77]: data=pd.Series(["Santhosh","Priya","migen",""])
+
+In [78]: data
+Out[78]:
+0    Santhosh
+1       Priya
+2       migen
+3
+dtype: object
+
+In [79]: data=pd.Series(["Santhosh","Priya","migen",None])
+
+In [80]: data
+Out[80]:
+0    Santhosh
+1       Priya
+2       migen
+3        None
+dtype: object
+
+In [81]: data=pd.Series(["Santhosh","Priya","migen",np.nan])
+
+In [82]: data
+Out[82]:
+0    Santhosh
+1       Priya
+2       migen
+3         NaN
+dtype: object
