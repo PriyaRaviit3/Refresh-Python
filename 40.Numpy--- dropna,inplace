@@ -1,0 +1,88 @@
+In [98]: data.dropna()
+Out[98]:
+0    santhosh
+1       priya
+2       migen
+dtype: object
+
+In [99]: data.dropna(inplace=True)
+
+In [100]: data
+Out[100]:
+0    santhosh
+1       priya
+2       migen
+dtype: object
+
+In [101]: data
+Out[101]:
+0    santhosh
+1       priya
+2       migen
+dtype: object
+
+In [102]: data=pd.Series(["Santhosh","Priya","migen",np.nan,"bavyaa"])
+
+In [103]: data
+Out[103]:
+0    Santhosh
+1       Priya
+2       migen
+3         NaN
+4      bavyaa
+dtype: object
+
+In [104]: data=pd.Series(["Santhosh","Priya","migen",np.nan,"bavyaa",None])
+
+In [105]: data
+Out[105]:
+0    Santhosh
+1       Priya
+2       migen
+3         NaN
+4      bavyaa
+5        None
+dtype: object
+
+In [106]: data.dropna()
+Out[106]:
+0    Santhosh
+1       Priya
+2       migen
+4      bavyaa
+dtype: object
+
+In [107]: data
+Out[107]:
+0    Santhosh
+1       Priya
+2       migen
+3         NaN
+4      bavyaa
+5        None
+dtype: object
+
+In [108]: data.dropna(inplace=True)
+
+In [109]: data
+Out[109]:
+0    Santhosh
+1       Priya
+2       migen
+4      bavyaa
+dtype: object
+
+In [110]:                                                                                                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
