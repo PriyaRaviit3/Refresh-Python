@@ -1,0 +1,684 @@
+http://localhost:8889/edit/nchs.csv
+
+
+
+import pandas as pd
+
+import numpy as np
+
+data=pd.read_csv("e:python/d3/nchs.csv")
+
+data
+
+Year	113 Cause Name	Cause Name	State	Deaths	Age-adjusted Death Rate
+0	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Alabama	2755	55.5
+1	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Alaska	439	63.1
+2	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Arizona	4010	54.2
+3	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Arkansas	1604	51.8
+4	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	California	13213	32.0
+5	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Colorado	2880	51.2
+6	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Connecticut	1978	50.3
+7	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Delaware	516	52.4
+8	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	District of Columbia	401	58.3
+9	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Florida	12561	54.9
+10	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Georgia	4701	45.8
+11	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Hawaii	577	35.3
+12	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Idaho	849	49.5
+13	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Illinois	5508	41.0
+14	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Indiana	3496	51.6
+15	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Iowa	1608	45.8
+16	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Kansas	1444	45.7
+17	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Kentucky	3194	71.0
+18	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Louisiana	2710	57.4
+19	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Maine	909	62.4
+20	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Maryland	2271	35.7
+21	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Massachusetts	3831	52.8
+22	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Michigan	5313	50.5
+23	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Minnesota	2697	43.8
+24	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Mississippi	1803	59.2
+25	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Missouri	3625	57.0
+26	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Montana	626	54.1
+27	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Nebraska	772	37.0
+28	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Nevada	1395	46.0
+29	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	New Hampshire	924	66.6
+...	...	...	...	...	...	...
+10266	2011	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2680	42.8
+10267	2010	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2525	40.8
+10268	2009	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2449	40.0
+10269	2008	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2484	40.8
+10270	2007	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2619	44.0
+10271	2006	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2524	42.7
+10272	2005	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2490	42.8
+10273	2004	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2303	39.7
+10274	2003	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2345	41.0
+10275	2002	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2274	40.1
+10276	2001	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2100	37.5
+10277	2000	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2159	38.9
+10278	1999	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	1955	35.6
+10279	2015	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	400	65.8
+10280	2014	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	361	60.9
+10281	2013	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	325	55.2
+10282	2012	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	308	52.9
+10283	2011	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	317	56.2
+10284	2010	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	346	59.8
+10285	2009	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	299	53.7
+10286	2008	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	351	64.3
+10287	2007	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	299	56.5
+10288	2006	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	306	58.9
+10289	2005	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	302	58.7
+10290	2004	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	243	47.2
+10291	2003	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	273	55.1
+10292	2002	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	289	58.1
+10293	2001	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	272	55.5
+10294	2000	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	245	50.8
+10295	1999	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	258	52.8
+10296 rows × 6 columns
+
+data.info()
+
+
+<class 'pandas.core.frame.DataFrame'>
+
+RangeIndex: 10296 entries, 0 to 10295
+
+Data columns (total 6 columns):
+
+Year                       10296 non-null int64
+113 Cause Name             10296 non-null object
+Cause Name                 10296 non-null object
+State                      10296 non-null object
+Deaths                     10296 non-null int64
+Age-adjusted Death Rate    10296 non-null float64
+dtypes: float64(1), int64(2), object(3)
+memory usage: 482.7+ KB
+data.shape
+
+data.shape
+
+(10296, 6)
+
+data.size
+
+61776
+
+
+data['State'].head()  
+
+0       Alabama
+1        Alaska
+2       Arizona
+3      Arkansas
+4    California
+Name: State, dtype: object
+
+data['State'].unique()
+
+array(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+       'Colorado', 'Connecticut', 'Delaware', 'District of Columbia',
+       'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana',
+       'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+       'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+       'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+       'New Jersey', 'New Mexico', 'New York', 'North Carolina',
+       'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+       'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+       'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+       'West Virginia', 'Wisconsin', 'Wyoming', 'United States'],
+      dtype=object)
+      
+data['State'][data['Age-adjusted Death Rate']].unique()
+
+array([nan, 'New York', 'South Carolina', 'Alaska', 'Alabama', 'Oklahoma',
+       'Vermont', 'Oregon', 'Rhode Island', 'North Dakota',
+       'South Dakota', 'North Carolina', 'Pennsylvania', 'Utah',
+       'Wyoming', 'Nevada', 'Texas', 'Washington', 'West Virginia',
+       'Tennessee', 'Virginia', 'Wisconsin', 'United States',
+       'New Mexico', 'Nebraska', 'Louisiana', 'New Jersey', 'Michigan',
+       'New Hampshire', 'Maine', 'Kansas', 'Indiana', 'Maryland', 'Iowa',
+       'Mississippi', 'Kentucky', 'Missouri', 'Georgia', 'Massachusetts',
+       'Montana', 'Minnesota', 'Idaho', 'Florida', 'Delaware', 'Ohio',
+       'Connecticut', 'Colorado', 'California', 'District of Columbia',
+       'Illinois', 'Hawaii', 'Arkansas'], dtype=object)
+       
+    
+data['Age-adjusted Death Rate'].unique()
+
+array([55.5, 63.1, 54.2, ..., 71.7, 70.8, 63.7])
+
+data['State'].unique()
+
+array(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+       'Colorado', 'Connecticut', 'Delaware', 'District of Columbia',
+       'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana',
+       'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+       'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+       'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+       'New Jersey', 'New Mexico', 'New York', 'North Carolina',
+       'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+       'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+       'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+       'West Virginia', 'Wisconsin', 'Wyoming', 'United States'],
+      dtype=object)
+      
+
+dstate=data.groupby('Age-adjusted Death Rate').sum()
+
+dstate
+
+Year	Deaths
+Age-adjusted Death Rate		
+2.6	2012	21
+3.7	2016	30
+3.8	4013	53
+4.1	2014	325
+4.4	2009	29
+4.5	6040	125
+4.9	4028	408
+5.0	2001	279
+5.1	1999	30
+5.2	8023	379
+5.3	2003	304
+5.4	10026	714
+5.5	4019	491
+5.6	6034	490
+5.7	8053	976
+5.8	4011	280
+5.9	10035	3187
+6.0	10017	3019
+6.1	6021	1033
+6.2	8024	2873
+6.3	10015	3104
+6.4	10018	1018
+6.5	14029	3050
+6.6	14038	2688
+6.7	14037	3864
+6.8	20053	5142
+6.9	10044	1017
+7.0	12046	5570
+7.1	12029	3635
+7.2	18067	9499
+...	...	...
+999.0	2002	21016
+999.1	2006	28564
+1000.9	2001	20967
+1001.3	2005	47090
+1002.1	2001	45316
+1003.1	2003	21306
+1004.1	1999	39321
+1004.8	2000	45062
+1006.3	2000	41138
+1008.5	2002	41984
+1009.3	1999	44806
+1009.7	2002	40697
+1011.1	2000	21114
+1012.3	1999	21049
+1013.1	2001	41757
+1013.4	2002	46069
+1013.7	2003	42719
+1020.2	2003	46716
+1021.6	1999	41238
+1023.7	2005	44355
+1028.7	2005	29196
+1031.6	2003	28489
+1034.1	2002	5851
+1034.3	2001	28259
+1043.4	1999	28185
+1049.9	2001	5951
+1051.6	2002	28853
+1051.9	2000	28654
+1061.2	2000	6001
+1087.3	1999	6076
+2419 rows × 2 columns
+
+
+dstate=data.groupby('State').sum()
+
+dstate
+Year	Deaths	Age-adjusted Death Rate
+State			
+Alabama	397485	1510931	30446.7
+Alaska	397485	110361	24462.6
+Arizona	397485	1471757	23278.0
+Arkansas	397485	929634	29442.7
+California	397485	7694563	22415.2
+Colorado	397485	973746	22575.7
+Connecticut	397485	927612	21981.2
+Delaware	397485	238935	25367.4
+District of Columbia	397485	160361	27437.4
+Florida	397485	5512136	23067.3
+Georgia	397485	2182235	27467.6
+Hawaii	397485	300668	19696.3
+Idaho	397485	351070	24038.2
+Illinois	397485	3299528	25044.8
+Indiana	397485	1821157	27306.8
+Iowa	397485	901497	23889.8
+Kansas	397485	785398	25101.9
+Kentucky	397485	1340426	30240.9
+Louisiana	397485	1329242	29981.7
+Maine	397485	407962	25042.1
+Maryland	397485	1384915	24543.9
+Massachusetts	397485	1712812	22673.2
+Michigan	397485	2839241	26291.2
+Minnesota	397485	1212223	21462.2
+Mississippi	397485	935091	31652.3
+Missouri	397485	1796910	27437.4
+Montana	397485	277255	24817.1
+Nebraska	397485	484109	23626.1
+Nevada	397485	609031	26621.0
+New Hampshire	397485	332283	23610.9
+New Jersey	397485	2267451	23425.4
+New Mexico	397485	489205	24430.1
+New York	397485	4889235	22889.7
+North Carolina	397485	2447232	26618.7
+North Dakota	397485	191032	23140.2
+Ohio	397485	3501123	27134.4
+Oklahoma	397485	1171193	30124.5
+Oregon	397485	1001266	23934.7
+Pennsylvania	397485	4069680	25688.7
+Rhode Island	397485	310105	23755.7
+South Carolina	397485	1279233	27904.3
+South Dakota	397485	230111	23918.6
+Tennessee	397485	1889824	29506.6
+Texas	397485	5192340	25494.4
+United States	397485	78689345	24850.2
+Utah	397485	441702	22576.8
+Vermont	397485	168797	23610.4
+Virginia	397485	1871444	24856.6
+Washington	397485	1535878	23457.4
+West Virginia	397485	681657	30552.3
+Wisconsin	397485	1515656	23887.2
+Wyoming	397485	136865	25383.6
+
+data.State.head()
+
+0       Alabama
+1        Alaska
+2       Arizona
+3      Arkansas
+4    California
+Name: State, dtype: object
+
+data.State.unique()
+
+array(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+       'Colorado', 'Connecticut', 'Delaware', 'District of Columbia',
+       'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana',
+       'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+       'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+       'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+       'New Jersey', 'New Mexico', 'New York', 'North Carolina',
+       'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+       'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+       'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+       'West Virginia', 'Wisconsin', 'Wyoming', 'United States'],
+      dtype=object)
+
+data.drop(['State'], axis=1)
+
+Year	113 Cause Name	Cause Name	Deaths	Age-adjusted Death Rate
+0	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2755	55.5
+1	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	439	63.1
+2	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	4010	54.2
+3	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1604	51.8
+4	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	13213	32.0
+5	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2880	51.2
+6	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1978	50.3
+7	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	516	52.4
+8	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	401	58.3
+9	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	12561	54.9
+10	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	4701	45.8
+11	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	577	35.3
+12	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	849	49.5
+13	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	5508	41.0
+14	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	3496	51.6
+15	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1608	45.8
+16	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1444	45.7
+17	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	3194	71.0
+18	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2710	57.4
+19	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	909	62.4
+20	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2271	35.7
+21	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	3831	52.8
+22	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	5313	50.5
+23	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2697	43.8
+24	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1803	59.2
+25	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	3625	57.0
+26	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	626	54.1
+27	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	772	37.0
+28	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1395	46.0
+29	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	924	66.6
+...	...	...	...	...	...
+10266	2011	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2680	42.8
+10267	2010	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2525	40.8
+10268	2009	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2449	40.0
+10269	2008	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2484	40.8
+10270	2007	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2619	44.0
+10271	2006	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2524	42.7
+10272	2005	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2490	42.8
+10273	2004	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2303	39.7
+10274	2003	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2345	41.0
+10275	2002	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2274	40.1
+10276	2001	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2100	37.5
+10277	2000	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	2159	38.9
+10278	1999	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	1955	35.6
+10279	2015	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	400	65.8
+10280	2014	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	361	60.9
+10281	2013	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	325	55.2
+10282	2012	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	308	52.9
+10283	2011	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	317	56.2
+10284	2010	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	346	59.8
+10285	2009	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	299	53.7
+10286	2008	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	351	64.3
+10287	2007	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	299	56.5
+10288	2006	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	306	58.9
+10289	2005	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	302	58.7
+10290	2004	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	243	47.2
+10291	2003	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	273	55.1
+10292	2002	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	289	58.1
+10293	2001	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	272	55.5
+10294	2000	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	245	50.8
+10295	1999	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	258	52.8
+10296 rows × 5 columns
+
+
+data
+Year	113 Cause Name	Cause Name	State	Deaths	Age-adjusted Death Rate
+0	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Alabama	2755	55.5
+1	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Alaska	439	63.1
+2	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Arizona	4010	54.2
+3	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Arkansas	1604	51.8
+4	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	California	13213	32.0
+5	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Colorado	2880	51.2
+6	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Connecticut	1978	50.3
+7	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Delaware	516	52.4
+8	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	District of Columbia	401	58.3
+9	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Florida	12561	54.9
+10	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Georgia	4701	45.8
+11	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Hawaii	577	35.3
+12	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Idaho	849	49.5
+13	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Illinois	5508	41.0
+14	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Indiana	3496	51.6
+15	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Iowa	1608	45.8
+16	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Kansas	1444	45.7
+17	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Kentucky	3194	71.0
+18	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Louisiana	2710	57.4
+19	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Maine	909	62.4
+20	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Maryland	2271	35.7
+21	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Massachusetts	3831	52.8
+22	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Michigan	5313	50.5
+23	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Minnesota	2697	43.8
+24	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Mississippi	1803	59.2
+25	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Missouri	3625	57.0
+26	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Montana	626	54.1
+27	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Nebraska	772	37.0
+28	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Nevada	1395	46.0
+29	2016	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	New Hampshire	924	66.6
+...	...	...	...	...	...	...
+10266	2011	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2680	42.8
+10267	2010	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2525	40.8
+10268	2009	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2449	40.0
+10269	2008	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2484	40.8
+10270	2007	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2619	44.0
+10271	2006	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2524	42.7
+10272	2005	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2490	42.8
+10273	2004	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2303	39.7
+10274	2003	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2345	41.0
+10275	2002	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2274	40.1
+10276	2001	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2100	37.5
+10277	2000	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	2159	38.9
+10278	1999	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wisconsin	1955	35.6
+10279	2015	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	400	65.8
+10280	2014	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	361	60.9
+10281	2013	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	325	55.2
+10282	2012	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	308	52.9
+10283	2011	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	317	56.2
+10284	2010	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	346	59.8
+10285	2009	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	299	53.7
+10286	2008	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	351	64.3
+10287	2007	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	299	56.5
+10288	2006	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	306	58.9
+10289	2005	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	302	58.7
+10290	2004	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	243	47.2
+10291	2003	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	273	55.1
+10292	2002	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	289	58.1
+10293	2001	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	272	55.5
+10294	2000	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	245	50.8
+10295	1999	Accidents (unintentional injuries) (V01-X59,Y8...	Unintentional injuries	Wyoming	258	52.8
+10296 rows × 6 columns
+
+
+dstate=data.groupby('Deaths').sum()
+
+dstate
+Year	Age-adjusted Death Rate
+Deaths		
+21	4014	9.4
+23	4004	10.9
+24	4000	19.1
+28	2003	8.4
+29	2009	4.4
+30	12033	36.2
+31	2002	5.2
+33	4009	10.9
+34	4014	18.3
+36	6011	25.2
+37	6037	15.8
+38	4018	16.2
+39	4023	9.9
+40	6024	22.8
+41	4025	15.3
+42	2004	15.1
+43	6021	21.9
+44	10036	61.2
+45	8018	45.3
+46	1999	19.6
+47	4009	34.2
+48	4011	31.7
+49	10053	43.4
+50	8034	36.4
+51	6019	45.2
+52	10046	39.9
+53	10031	48.4
+54	6021	28.1
+55	4009	12.2
+56	14043	78.7
+...	...	...
+616067	2007	196.1
+616828	2008	192.1
+631636	2006	205.5
+633842	2015	168.5
+635260	2016	165.5
+652091	2005	216.8
+652486	2004	221.6
+685089	2003	236.3
+696947	2002	244.6
+700142	2001	249.5
+710760	2000	257.6
+725192	1999	266.5
+2319475	2016	616.0
+2391399	1999	875.6
+2397615	2004	813.7
+2403351	2000	869.0
+2416425	2001	858.8
+2423712	2007	775.3
+2426264	2006	791.8
+2437163	2009	749.6
+2443387	2002	855.9
+2448017	2005	815.0
+2448288	2003	843.5
+2468435	2010	747.0
+2471984	2008	774.9
+2515458	2011	741.3
+2543279	2012	732.8
+2596993	2013	731.9
+2626418	2014	724.6
+2712630	2015	733.1
+5741 rows × 2 columns
+
+dstate.drop(['Year'],axis=1)
+Age-adjusted Death Rate
+Deaths	
+21	9.4
+23	10.9
+24	19.1
+28	8.4
+29	4.4
+30	36.2
+31	5.2
+33	10.9
+34	18.3
+36	25.2
+37	15.8
+38	16.2
+39	9.9
+40	22.8
+41	15.3
+42	15.1
+43	21.9
+44	61.2
+45	45.3
+46	19.6
+47	34.2
+48	31.7
+49	43.4
+50	36.4
+51	45.2
+52	39.9
+53	48.4
+54	28.1
+55	12.2
+56	78.7
+...	...
+616067	196.1
+616828	192.1
+631636	205.5
+633842	168.5
+635260	165.5
+652091	216.8
+652486	221.6
+685089	236.3
+696947	244.6
+700142	249.5
+710760	257.6
+725192	266.5
+2319475	616.0
+2391399	875.6
+2397615	813.7
+2403351	869.0
+2416425	858.8
+2423712	775.3
+2426264	791.8
+2437163	749.6
+2443387	855.9
+2448017	815.0
+2448288	843.5
+2468435	747.0
+2471984	774.9
+2515458	741.3
+2543279	732.8
+2596993	731.9
+2626418	724.6
+2712630	733.1
+5741 rows × 1 columns
+
+
+dstate
+Year	Age-adjusted Death Rate
+Deaths		
+21	4014	9.4
+23	4004	10.9
+24	4000	19.1
+28	2003	8.4
+29	2009	4.4
+30	12033	36.2
+31	2002	5.2
+33	4009	10.9
+34	4014	18.3
+36	6011	25.2
+37	6037	15.8
+38	4018	16.2
+39	4023	9.9
+40	6024	22.8
+41	4025	15.3
+42	2004	15.1
+43	6021	21.9
+44	10036	61.2
+45	8018	45.3
+46	1999	19.6
+47	4009	34.2
+48	4011	31.7
+49	10053	43.4
+50	8034	36.4
+51	6019	45.2
+52	10046	39.9
+53	10031	48.4
+54	6021	28.1
+55	4009	12.2
+56	14043	78.7
+...	...	...
+616067	2007	196.1
+616828	2008	192.1
+631636	2006	205.5
+633842	2015	168.5
+635260	2016	165.5
+652091	2005	216.8
+652486	2004	221.6
+685089	2003	236.3
+696947	2002	244.6
+700142	2001	249.5
+710760	2000	257.6
+725192	1999	266.5
+2319475	2016	616.0
+2391399	1999	875.6
+2397615	2004	813.7
+2403351	2000	869.0
+2416425	2001	858.8
+2423712	2007	775.3
+2426264	2006	791.8
+2437163	2009	749.6
+2443387	2002	855.9
+2448017	2005	815.0
+2448288	2003	843.5
+2468435	2010	747.0
+2471984	2008	774.9
+2515458	2011	741.3
+2543279	2012	732.8
+2596993	2013	731.9
+2626418	2014	724.6
+2712630	2015	733.1
+5741 rows × 2 columns
+
+data.info()
+​
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10296 entries, 0 to 10295
+Data columns (total 6 columns):
+Year                       10296 non-null int64
+113 Cause Name             10296 non-null object
+Cause Name                 10296 non-null object
+State                      10296 non-null object
+Deaths                     10296 non-null int64
+Age-adjusted Death Rate    10296 non-null float64
+dtypes: float64(1), int64(2), object(3)
+memory usage: 482.7+ KB
+dd=data['State'].unique()
+
+dd
+
+array(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+       'Colorado', 'Connecticut', 'Delaware', 'District of Columbia',
+       'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana',
+       'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+       'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+       'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+       'New Jersey', 'New Mexico', 'New York', 'North Carolina',
+       'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+       'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+       'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+       'West Virginia', 'Wisconsin', 'Wyoming', 'United States'],
+      dtype=object)
+      
+type(dd)
+
+numpy.ndarray
+
+dstate.insert(2,"State",dd,allow_duplicates=True) 
