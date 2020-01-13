@@ -90,4 +90,12 @@ plt.hist(z,**density)
         0.60763817, 0.62093726, 0.63423635, 0.64753544, 0.66083453,
         0.67413362]),
  <a list of 1 Patch objects>)
+ 
+ 
+ plt.hist(x,**density)
+plt.hist(y,**density)
+plt.hist(z,**density)
+plt.legend()
+
+
 
