@@ -6,3 +6,5 @@ https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#categori
 
 https://seaborn.pydata.org/tutorial.html
 
+from pandas_profiling import ProfileReport as PR
+       
